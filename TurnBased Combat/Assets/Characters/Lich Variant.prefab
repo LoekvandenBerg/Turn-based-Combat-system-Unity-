@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4257786039424137779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6290108968396371020, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_Name
+      value: Lich
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484921568466387936, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004222226652386926, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: spells.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004222226652386926, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: spells.Array.data[1]
+      value: 
+      objectReference: {fileID: 9172653680116111774, guid: 90578583523cde64daf3b57810c034ed,
+        type: 3}
+    - target: {fileID: 9004222226652386926, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: spells.Array.data[2]
+      value: 
+      objectReference: {fileID: 5753699128326981630, guid: d23db0bf3546ebd4f8534ff7ac2601cf,
+        type: 3}
+    - target: {fileID: 9004222226652386926, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: characterName
+      value: Lich
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004222226652386926, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: spells.Array.data[0]
+      value: 
+      objectReference: {fileID: 5753699128326981630, guid: d23db0bf3546ebd4f8534ff7ac2601cf,
+        type: 3}
+    - target: {fileID: 9004222226652386926, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: health
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004222226652386926, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: maxHealth
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004222226652386926, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: manaPoints
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004222226652386926, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: attackPower
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307835417676796839, guid: 273c776c469c7844cbcb98fee08d7df5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 74eafb4eb2c03a342a6a165d84202e0f,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 273c776c469c7844cbcb98fee08d7df5, type: 3}
