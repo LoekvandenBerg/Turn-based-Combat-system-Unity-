@@ -32,6 +32,24 @@ public class BattleUIController : MonoBehaviour
         }
     }
 
+    public void ToggleSpellPanel(bool state)
+    {
+        spellPanel.SetActive(state);
+        if (state)
+        {
+            BuildSpellList(BattleController.Instance.GetCurrentCharacter().spells);
+        }
+    }
+
+    public void ToggleActionState(bool state)
+    {
+        ToggleSpellPanel(state);
+        foreach(Button button in actionButtons)
+        {
+            button.interactable = state;
+        }
+    }
+
     public void BuildSpellList(List<Spell> spells)
     {
         if(spellPanel.transform.childCount > 0)
@@ -56,9 +74,23 @@ public class BattleUIController : MonoBehaviour
         BattleController.Instance.playerIsAttacking = false;
     }
 
-    void SelectAttack()
+    public void SelectAttack()
     {
         BattleController.Instance.playerSelectedSpell = null;
         BattleController.Instance.playerIsAttacking = true;
+    }
+
+    public void UpdateCharacterUI()
+    {
+        for(int i = 0; i < BattleController.Instance.characters[0].Count; i++)
+        {
+            Character character = BattleController.Instance.characters[0][i];
+            characterInfo[i].text = string.Format("{0} hp: {1}/{2} mp: {3}", character.characterName, character.health, character.maxHealth, character.manaPoints);
+        }
+    }
+
+    public void Defend()
+    {
+        BattleController.Instance.GetCurrentCharacter().Defend();
     }
 }

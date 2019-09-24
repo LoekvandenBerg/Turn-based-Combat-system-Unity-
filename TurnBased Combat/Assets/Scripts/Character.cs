@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
 
     public void Hurt(int amount)
     {
-        int dmgAmount = Random.Range(0, 1)* (amount - defensePower);
+        int dmgAmount = amount;
         //can't go below 0 health
         health = Mathf.Max(health - dmgAmount, 0);
         if (health == 0)
@@ -25,7 +25,7 @@ public class Character : MonoBehaviour
 
     public void Heal(int amount)
     {
-        int healAmount = Random.Range(0, 1) * (amount + attackPower);
+        int healAmount = amount;
         //can't go above maxHealth
         health = Mathf.Min(health + healAmount, maxHealth);
     }

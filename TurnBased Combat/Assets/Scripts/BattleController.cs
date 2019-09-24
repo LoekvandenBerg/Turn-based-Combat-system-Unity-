@@ -12,6 +12,8 @@ public class BattleController : MonoBehaviour
     public bool playerIsAttacking;
     [SerializeField]
     private BattleSpawnPoint[] spawnpoints;
+    [SerializeField]
+    private BattleUIController uiController;
 
     private int actTurn;
 
@@ -28,7 +30,7 @@ public class BattleController : MonoBehaviour
 
         characters.Add(0, new List<Character>());
         characters.Add(1, new List<Character>());
-        //characters[actTurn][characterTurnIndex]
+        FindObjectOfType<BattleLauncher>().Launch();
     }
 
     public Character GetRandomPlayer()
@@ -70,10 +72,12 @@ public class BattleController : MonoBehaviour
             switch(actTurn)
             {
                 case 0:
-                    //do ui stuff
+                    uiController.ToggleActionState(true);
+                    uiController.BuildSpellList(GetCurrentCharacter().spells);
                     break;
                 case 1:
                     StartCoroutine(PerformAct());
+                    uiController.ToggleActionState(false);
                     //do ui stuff && act
                     break;
             }
@@ -87,10 +91,11 @@ public class BattleController : MonoBehaviour
     IEnumerator PerformAct()
     {
         yield return new WaitForSeconds(.75f);
-        if (characters[actTurn][characterTurnIndex].health > 0)
+        if (GetCurrentCharacter().health > 0)
         {
-            characters[actTurn][characterTurnIndex].GetComponent<Enemy>().Act();
+            GetCurrentCharacter().GetComponent<Enemy>().Act();
         }
+        uiController.UpdateCharacterUI();
         yield return new WaitForSeconds(1f);
         NextAct();
     }
@@ -99,12 +104,13 @@ public class BattleController : MonoBehaviour
     {
         if (playerIsAttacking)
         {
-            DoAttack(characters[actTurn][characterTurnIndex], character);
+            DoAttack(GetCurrentCharacter(), character);
         }
         else if (playerSelectedSpell != null)
         {
-            if (characters[actTurn][characterTurnIndex].CastSpell(playerSelectedSpell, character))
+            if (GetCurrentCharacter().CastSpell(playerSelectedSpell, character))
             {
+                uiController.UpdateCharacterUI();
                 NextAct();
             }
             else
@@ -117,6 +123,7 @@ public class BattleController : MonoBehaviour
     public void DoAttack(Character attacker, Character target)
     {
         target.Hurt(attacker.attackPower);
+        NextAct();
     }
 
     public void StartBattle(List<Character> players, List<Character> enemies)
@@ -130,5 +137,10 @@ public class BattleController : MonoBehaviour
         {
             characters[1].Add(spawnpoints[i+3].Spawn(enemies[i]));
         }
+    }
+
+    public Character GetCurrentCharacter()
+    {
+        return characters[actTurn][characterTurnIndex];
     }
 }
